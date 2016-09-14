@@ -5,11 +5,10 @@
  *  
  */
 
-class Framework {
+class Kewl {
     
     public static function run() {
-        //echo "run()";
-        
+                
         self::init();
         
         self::autoload();
@@ -65,16 +64,16 @@ class Framework {
         
         //Load core classes
         
-        require CORE_PATH . 'Controller.class.php';
+        require CORE_PATH . 'Controller.php';
         
-        require CORE_PATH . 'Loader.class.php';
+        require CORE_PATH . 'Loader.php';
         
-        require DB_PATH . 'Mysql.class.php';
+        require DB_PATH . 'Mysql.php';
         
-        require CORE_PATH . 'Model.class.php';
+        require CORE_PATH . 'Model.php';
         
         //Load configuration file
-        $GLOBALS['config'] = include CONFIG_PATH . 'config.php';
+        //$GLOBALS['config'] = include CONFIG_PATH . 'config.php';
         
         //Start session
         session_start();
@@ -95,10 +94,10 @@ class Framework {
         
         //auload app's controller and model classes
         if(substr($classname, -10) == 'Controller'){
-            require_once CURR_CONTROLLER_PATH . "$classname.class.php";
+            require_once CURR_CONTROLLER_PATH . "$classname.php";
         } 
         elseif (substr($classname, -5) == "Model"){
-            require_once MODEL_PATH . "$classname.class.php";
+            require_once MODEL_PATH . "$classname.php";
         }
     }
     

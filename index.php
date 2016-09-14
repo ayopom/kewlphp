@@ -1,10 +1,5 @@
 <?php
 
-/**
- * Kewl front controller
- */
+require "framework/core/Kewl.php";
 
-
-require "framework/core/Framework.class.php";
-
-Framework::run();
+Kewl::run();
